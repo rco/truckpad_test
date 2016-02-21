@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>TruckpadTest</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+		<title>Truck Pad</title>
 
-<%= yield %>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
 
-</body>
+	<body>
+
+		<%= nav_bar brand: "Truck Pad", brand_link: root_url do %>
+			<div class="navbar-right">
+				<%= link_to "Lista de Motoristas",
+							root_url ,				
+							class: "btn btn-info navbar-btn"%>
+				<%= link_to "Cadastrar Motorista",
+							new_driver_path ,				
+							class: "btn btn-info navbar-btn"%>
+			</div>		
+		<% end %>
+
+		<div class="container">
+
+			<%= yield %>
+
+		</div>
+
+	</body>
+
 </html>

@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160219192956) do
+ActiveRecord::Schema.define(version: 20160221205409) do
 
   create_table "drivers", force: :cascade do |t|
     t.string   "name"
     t.integer  "cpf",        limit: 11
     t.string   "truck_type"
-    t.decimal  "longitude"
-    t.decimal  "latitude"
+    t.float    "longitude"
+    t.float    "latitude"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
   end

@@ -1,0 +1,66 @@
+<% @driver.errors.full_messages.each do |message| %>
+	<div class="alert alert-danger" role="alert"> <%= message %> </div>
+<% end %>
+
+<%= form_for Driver.new do |f| %>
+
+	<div class="form-group">
+		<%= f.label :name%>
+		<%= f.text_field :name, class: "form-control"  %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :cpf%>
+		<%= f.number_field :cpf, step:1, class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :truck_type%>
+		<%= f.text_field :truck_type, class: "form-control"%>
+	</div>
+
+	<div class="form-inline">
+		<div class="form-group">
+			<%= f.label :longitude%>
+			<%= f.number_field :longitude, :step => 0.0000001, class: "form-control"%>
+		
+
+		<div class="form-group">
+			<%= f.label :latitude%>
+			<%= f.number_field :latitude, :step => 0.0000001, class: "form-control"%>
+		</div>
+	</div>
+
+	<%= f.submit "Novo Motorista", class: "btn btn-primary" %>
+
+<% end %>
+
+<br><br><br>
+
+<table class="table table-bordered table-hover">
+	<thead>
+		<tr>
+			<th>Nome</th>
+			<th>CPF</th>
+			<th>Caminhão</th>
+			<th>Ação</th>
+		</tr>		
+	</thead>
+	<tbody>
+	<%	@drivers.each do |driver| %>
+		<tr>
+			<td><%=	driver.name %></td>
+			<td><%=	driver.cpf %></td>
+			<td><%=	driver.truck_type %></td>
+
+			<td>
+				<%= button_to 	"Remover", 
+								driver, 
+								method: :delete, 
+								class: "btn btn-danger" ,
+								data: { confirm: "Deseja realmente remover: #{driver.name}?" }%>			
+			</td>
+		</tr>
+		<%	end	%>
+	</tbody>
+</table>

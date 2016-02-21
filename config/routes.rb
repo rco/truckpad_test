@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  get "locations" => "locations#index"
+	resources :drivers, only: [:new, :create]
+
+	delete "/drivers/:id" => "drivers#destroy", as: :driver
+
+	root "drivers#index"
 end
