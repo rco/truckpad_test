@@ -1,28 +1,13 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Fazer uma aplicação Rails padrão com um modelo "Motoristas" contendo o Nome, CPF, Tipo de Caminhão e Latitude/Longitude.
 
-Things you may want to cover:
+Ter telas de cadastro e edição destes motoristas.
 
-* Ruby version
+Ter uma tela chamada Localização, que possui duas colunas, a primeira ocupando 30% da tela tem a lista de motoristas mostrando o nome, cpf e caminhão, a segunda ocupando o restante da tela tem um grande mapa com pinos referentes aos motoristas que aparecem na coluna esquerda.
 
-* System dependencies
+Ao clicar em um pino, deve aparecer um balão com os dados do motorista e o ítem na lista esquerda respectivo deve ser destacado.
 
-* Configuration
+Ao clicar em um ítem da lista, este se destaca e faz o balão do pino do mapa respectivo aparecer, e também centraliza o mapa em torno do respectivo pino.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+O layout deve ser baseado em BootStrap e ser responsivo, acessível pela web e celular, na web os formulários e tabelas de índice podem ter duas colunas e serem mais largos, no celular apenas uma coluna. No caso da tela de mapa, a lista aparece primeiro e o mapa logo abaixo, no celular.
